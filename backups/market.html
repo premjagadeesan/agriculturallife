@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Agricultural Life</title>
+	<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	  <link rel="stylesheet" type="text/css" media="all" href="style1.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="responsive.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="searchstyle.css"/>
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <script src="js/script.js"></script>
+</head>
+<body>
+	<div id="header">
+		<div class="clearfix">			
+			<div id="navigation">
+					<a href="index.html"><img src="agrilifeimage/frontagrilogo.png" alt="LOGO" height="50" width="300"></a>	
+					
+					<a href="index.html">Home</a>
+				
+					<a href="agriculturaltechnologies.html">Agri Technologies</a>
+				
+					<a href="forum.html">Forum</a>					
+				
+					<a href="informations.html">Informations</a>
+				
+					<a href="market.php" style="color:aqua;">Market</a>
+				
+					<a href="innovations.php">Innovations</a>
+				</div>
+		</div>
+	</div>
+	
+	<div id="1">	
+	
+		<span class="chyron"><em><a href="index.html">&laquo; back to the site</a></em></span>		
+			
+		<form name="Advertisement" id="Create-pool" method="post" action="register.php">
+			<div id="wrapping" class="clearfix">
+			<center>
+			<h1 style="color:#E54040;font-size:40px">Submit Advertisment </h1><br>
+			</center>
+			<h2 style="color:aqua;">Product Information</h2>	
+				
+			<section id="container">				
+               <h3>Choose Product:</h3>
+							<select id="opts"  onchange="showForm()" style="width:300px" class="txtinput">
+								<option value="0" id="price">Select Option</option>
+								<option value="1">Crops</option>
+								<option value="2">Fruits</option>
+								<option value="3">Vegetables</option>
+							</select>
+								
+							<div id="f1" style="display:none">								
+									<h3>Enter Crop<h3>
+									<input type="text" name="name" id="crops"style="width:220px" autocomplete="off" tabindex="1" class="txtinput">
+									<pre><h3>                             or                               </h3></pre>
+									<h3>Choose From List<h3>
+									<select id="opts" onchange="showForm()" style="width:300px" class="txtinput">							
+									<script language="javascript">
+											var crops = new Array("Select Crop","Rice","Wheat","Maize","Cotton","Jute","Groundnut", "Mustard", "Rapeseed", "Linseed","Caster","Tea","Coffee","Pearl Millet(Bajira)","Thinai Millet","Varagu Millet","Finger Millet(Ragi)","Sorghum","Jowar");
+											for(var hi=0; hi<crops.length; hi++)
+											document.write("<option value=\""+crops[hi]+"\">"+crops[hi]+"</option>");
+										</script>									
+									</select>								
+							</div>
+
+							<div id="f2" style="display:none">
+							<h3>Enter Fruit<h3>
+									<input type="text" name="name" id="fruits"style="width:220px" autocomplete="off" tabindex="1" class="txtinput">
+									<pre><h3>                             or                               </h3></pre>
+									<h3>Choose From List<h3>
+									<select id="opts" onchange="showForm()" style="width:300px" class="txtinput">
+										<script language="javascript">
+									var fruits = new Array("Select Fruit","Apple","Banana","Lime/Lemon","Mosambi","Orange (Mandarin)","Grapes","Mango","Papaya","Sapota ");
+									for(var hi=0; hi<fruits.length; hi++)
+									document.write("<option value=\""+fruits[hi]+"\">"+fruits[hi]+"</option>");
+									</script>
+									</select>
+								
+							</div>
+							<div id="f3" style="display:none">
+							<h3>Enter Vegetable<h3>
+									<input type="text" name="name" id="vegetables"style="width:220px" autocomplete="off" tabindex="1" class="txtinput">
+									<pre><h3>                             or                               </h3></pre>
+									<h3>Choose From List<h3>
+								
+									<select id="opts" onchange="showForm()" style="width:300px" class="txtinput">
+										<script language="javascript">
+										var vegetables = new Array("Select Vegetable","Brinjal", "Tomato", "Chillies", "Sweet pepper (Capsicum)","Cabbage", "Cauliflower", "Knol","Onion", "Garlic","Okra","Longmelon", "Muskmelon", "Snapmelon", "Watermelon", "Cucumber", "Pumpkin", "Summer squash","Bitter gourd", "Bottle gourd", "Pointed gourd (parwal)", "Ridge gourd", "Round gourd", "Snake grourd", "Sponge gourd", "Wax gourd (ash gourd)","Carrot", "Radish", "Turnip","Broad bean", "Cluster bean", "Cowpea", "Dolichos bean","French bean","Peas","Amaranthus", "Beet leaf", "Fenugreek", "Spinach",
+										"Lettuce","Drumstick", "Curry leaf", "Agathi", "Paii");
+
+										for(var hi=0; hi<vegetables.length; hi++)
+										document.write("<option value=\""+vegetables[hi]+"\">"+vegetables[hi]+"</option>");
+										</script>
+									</select>
+								
+							</div>
+							<h3>Upload Image<h3>
+							<div class="upload_form_cont">
+                <form id="upload_form" enctype="multipart/form-data" method="post" action="upload.php">
+                    <div>                        
+                        <div><input type="file" name="image_file" id="image_file"  style="width:300px;" onchange="fileSelected();" class="txtinput" /></div>
+                    </div>
+                    
+					
+						
+			<section id="buttons">
+				
+					
+                        <input type="button" value="Upload"  onclick="startUploading()" />
+            </section>       
+				   </div>
+                    
+                    <div id="error">You should select valid image files only!</div>
+                    <div id="error2">An error occurred while uploading the file</div>
+                    <div id="abort">The upload has been canceled by the user or the browser dropped the connection</div>
+                    <div id="warnsize">Your file is very big. We can't accept it. Please select more small file</div>
+
+                    <div id="progress_info">
+                        <div id="progress"></div>                   
+                        
+                        <div id="upload_response"></div>
+                    </div>
+                </form>
+
+                <img id="preview" />
+							
+						<h3>Product Description:</h3>
+						<textarea  id="price" style="width:300px" placeholder="Describe about your product.."class="txtinput" ></textarea>							
+
+							
+							<script type="text/javascript">
+								function showForm() {
+									var selopt = document.getElementById("opts").value;
+									if (selopt == 1) {
+										document.getElementById("f1").style.display = "block";
+										document.getElementById("f2").style.display = "none";
+										document.getElementById("f3").style.display = "none";
+									}
+									if (selopt == 2) {
+										document.getElementById("f2").style.display = "block";
+										document.getElementById("f1").style.display = "none";
+										document.getElementById("f3").style.display = "none";
+									}
+									if (selopt == 3) {
+										document.getElementById("f3").style.display = "block";
+										document.getElementById("f1").style.display = "none";
+										document.getElementById("f2").style.display = "none";
+									}		
+									if (selopt == 0) {
+										document.getElementById("f3").style.display = "none";
+										document.getElementById("f2").style.display = "none";
+										document.getElementById("f1").style.display = "none";
+									}
+								}
+							</script>
+
+							
+                            <h3>Choose Quantity:</h3>
+
+							<select name=slist id="price" style="width:300px" class="txtinput">
+							<script id="price" language="javascript">
+							var quantity = new Array("Kilograms","Quintals","Tones");
+
+							for(var hi=0; hi<quantity.length; hi++)
+							document.write("<option value=\""+quantity[hi]+"\">"+quantity[hi]+"</option>");
+							</script>
+							</select>	
+							
+							<script type="text/javascript">
+							function AllowAlphabet(){
+										   if (!frm.alphabet.value.match(/^[0-9]+$/) && frm.alphabet.value !="")
+										   {
+												frm.alphabet.value="";
+												frm.alphabet.focus(); 
+												alert("Please Enter Quantity Correct");
+										   }
+							}      
+							</script> 
+							
+
+							
+							<h3>Total Quantity in kg/quintal/tone:</h3>
+							<input type="text"  name="name" id="quantity" onkeyup="AllowAlphabet()" style="width:220px" autocomplete="off" tabindex="1" class="txtinput">	
+							<h3>Expecting Price:</h3>
+							<input type="text"  name="name" id="price" onkeyup="AllowAlphabet()" style="width:220px" autocomplete="off" tabindex="1" class="txtinput">							
+							
+
+									
+									
+									
+			</section >
+                    
+                 <h2 style="color:aqua;">Sellers Information</h2>  	
+				 
+			<section id="container">			
+			
+					<h3>Contact Name: </h3>		
+					<input type="text" name="name" id="name"style="width:220px" autocomplete="off" tabindex="1" class="txtinput">
+					<h3>Email Id: </h3>
+					<input type="email" name="email" id="email" style="width:220px" autocomplete="off" tabindex="2" class="txtinput">
+					<h3>Phone No: </h3>
+					<input type="number" name="telephone" id="telephone" placeholder="0xxxxxxxxxx" tabindex="3" class="txtinput" style="width:120px">
+			
+					<h3>Address: </h3>
+					<textarea  id="price" style="width:300px" class="txtinput" ></textarea>
+					
+					 <h3>State:</h3>
+							<select name=slist style="width:320px" class="txtinput">
+										<script language="javascript">
+										var states = new Array("Select a state","Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa", "Pondicherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttaranchal", "Uttar Pradesh", "West Bengal");
+
+										for(var hi=0; hi<states.length; hi++)
+										document.write("<option value=\""+states[hi]+"\">"+states[hi]+"</option>");
+										</script>
+							</select>
+					<h3>Pincode: <h3> <input type="tel" name="Pincode" id="states" placeholder="xxxxxx" tabindex="3" class="txtinput" style="width:75px">	
+                        
+										
+			</section>    
+                   									
+				
+			<section id="buttons">
+				
+					<input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Reset">
+					<input type="submit" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="Post Ad">
+				<br style="clear:both;">
+				
+			</section>
+				
+			
+			</form>
+				
+			</div>
+		</div>
+	</div>
+	</div>
+	<div id="footer">
+	<center>
+		<a href="#1"><img id="img12"src="images/uparrow1.png" alt="Img" height="60" width="60" ></a>
+		</center>
+	<div id="footnote">
+			<div class="clearfix">
+				<div class="connect">
+					<a href="http://freewebsitetemplates.com/go/facebook/" class="facebook"></a><a href="http://freewebsitetemplates.com/go/twitter/" class="twitter"></a><a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus"></a><a href="http://pinterest.com/fwtemplates/" class="pinterest"></a>
+				</div>				
+				<center>
+				<p style="color:white">
+				
+					© Copyright 2014 <i> Agricultural Life </i>. All Rights Reserved. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="faq.html" >FAQ</a> &nbsp |&nbsp <a href="aboutal.html" > About AL </a> &nbsp | &nbsp  <a href="termsofuse.html"  >Terms of Use </a> &nbsp |&nbsp  <a href="marketingrules.html"> Marketing Rules </a> &nbsp| &nbsp <a href="marketingtips.html" > Marketing Tips </a> &nbsp| &nbsp <a href="contactal.html" id="active"> Contact AL <a>
+				
+				</p>
+				</center>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

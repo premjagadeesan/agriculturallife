@@ -1,0 +1,2 @@
+DELETE FROM `test`.`photos` WHERE `photos`.`serial` = 27 LIMIT 1;
+TRUNCATE TABLE `test`.`photos`;

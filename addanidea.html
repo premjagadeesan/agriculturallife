@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<meta name="viewport" content="width=device-width">
+
+	<meta name="Keywords" content="agriculture tutorial,agriculture information,agriculture market,agriculture forum,agriculture,agricultural technologies,agriculture advertisement,agriculture buy,agriculture sell,agriculture tips,agriculture techniques">
+
+	<meta name="Description" content="adding the new ideas on agriculture">
+
+	
+	<title>Agricultural Life</title>
+	<link rel="icon" type="image/ico" href="images/favicon.ico"/>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	  <link rel="stylesheet" type="text/css" media="all" href="style1.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="responsive.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="searchstyle.css"/>
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <link href="css/demo.css" rel="stylesheet" type="text/css" />
+  <script src="js/script.js"></script>
+  <script type="text/javascript" src="js/nicEdit.js"></script>
+					<script type="text/javascript">
+						bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+	</script>
+	
+	<link type="text/css" rel="stylesheet" href="css/jquery-te-1.4.0.css">
+	
+	
+	<link rel="stylesheet" type="text/css" href="css/validetta.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.js?v1.10.2"><\/script>')</script>
+<script type="text/javascript" src="js/validetta-min.js"></script>
+<!-- 
+    <script type="text/javascript" src="../languages/validettaLang-tr.js"></script> 
+-->
+<script type="text/javascript">
+$(function(){
+	$('#exm1').validetta({
+		customReg : {
+			regname : {
+				method : /^[\+][0-9]+?$|^[0-9]+?$/,
+				errorMessage : 'Custom Reg Error Message !'
+			},
+            // you can add more
+			example : { 
+				method : /^[\+][0-9]+?$|^[0-9]+?$/,
+				errorMessage : 'Lan mal !'
+			}
+		},
+        realTime : true
+	});
+	$('#exm2').validetta({
+        display : 'inline',
+        errorClass    : 'validetta-inline',
+        errorClose : false,
+		ajax : {
+			call 		: true,
+			type 		: 'POST',
+			url			: 'ajax.json',
+            dataType    : 'json',
+			success		: function(object,data){
+				alert('Student Name : '+data.student[0].name+' Student No :'+data.student[0].no);
+			},
+			beforeSend : function(){
+				console.log('start')	
+			},
+			complete : function(){
+				console.log('Finish him')	
+			},
+			fail : function(jqXHR, textStatus){
+				console.log(textStatus+':'+jqXHR.status+' : '+jqXHR.statusText);
+			}
+		}
+	});
+    $('#exm3').validetta({
+        onCompleteFunc : function(object,event){
+            event.preventDefault(); // if you dont break submit and if form doesnt have error, page will post
+            var _inp = $('#exm3').find('input[name=exm3-name]');
+            object.window.open.call(object, _inp, 'This is an example about how you can focus an input after completion of form validation.');
+            event.preventDefault();
+        }
+    });
+});
+</script>
+	
+<style type="text/css">
+body{ margin:0; padding:0;}
+a{text-decoration:none;}
+ul{list-style:none;}
+li{position:relative;}
+input{}
+label{width:300px; display:block;font-size:15px;font-weight:bold;}
+label[for]{width:100px}
+.ilblock{display:inline-block;}
+</style>	
+	
+	
+	
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery-te-1.4.0.min.js" charset="utf-8"></script>	
+	
+	
+	
+	
+	
+</head>
+<body>
+	<div id="header">
+		<div class="clearfix">			
+			<div id="navigation">
+					<a href="index.html"><img src="agrilifeimage/frontagrilogo.png" alt="LOGO" height="50" width="300"></a>	
+					
+					<a href="index.html">Home</a>
+				
+					<a href="agriculturaltechnologies.html">Agri Technologies</a>
+				
+					<a href="tutorials.html">Tutorials</a>					
+				
+					<a href="information.html">Information</a>
+				
+					<a href="market.php" >Market</a>
+				
+					<a href="forum.php">Forum</a>
+				</div>
+		</div>
+	</div>
+	
+	<div id="1">	
+	
+		<span class="chyron"><em><a href="index.html">&laquo; back to the site</a></em></span>		
+			<div id="wrapping" class="clearfix">
+			
+			<div id="Create-pool">
+			<section id="container">
+		<form  form id="exm1"  enctype="multipart/form-data" method="post" action="storeidea.php">					
+					
+		<center><h3 style="color:#ff9900;">Share Information </h3><br></center>		
+		<ul>	         
+		<li><label style="padding-bottom:10px" >Title:</label><textarea name="title" style="width:600px;height:30px;margin-top:10px" data-validetta="required" class="jqte-test" ></textarea></li> 			
+		<li><label style="padding-bottom:10px;padding-top:10px;" >Contents:</label><textarea name="contents" style="width:600px;height:500px;margin-top:10px" data-validetta="required" class="jqte-test" ></textarea></li> 
+		<li><label style="padding-top:10px;" >Add Photo:</label> <input type="file" name="photo" style="width:300px" data-validetta="required" data-validetta="required"><br>
+		<li><label style="padding-top:10px;" >Add File:</label> <input type="file" name="document" style="width:300px" data-validetta="required" data-validetta="required"><br>
+		<li><label>Name:</label><input type="text" id="name" name="name" style="width:300px" data-validetta="required,minLength[2],maxLength[30]" class="txtinput" /></li>
+		<li><label>Phone No:</label><input type="text" id="telephone"  placeholder="0xxxxxxxxxx"  name="phoneno" style="width:300px"  data-validetta="number,required" class="txtinput" /></li>		 
+	    <li><label>Email:</label><input type="text" id="email" name="emailid" style="width:300px" data-validetta="email,required" class="txtinput" /></li>        
+	    <ul>
+		<script>
+			$('.jqte-test').jqte();
+			
+			// settings of status
+			var jqteStatus = true;
+			$(".status").click(function()
+			{
+				jqteStatus = jqteStatus ? false : true;
+				$('.jqte-test').jqte({"status" : jqteStatus})
+			});
+		</script>
+			  							
+				
+				<a href="forum.php"><input type="submit" value="Post an Idea"></a> 
+			
+			</form>
+				</section> 
+			</div>
+		</div>
+		</div>
+	</div>
+	</div>
+	<div id="footer">
+	<center>
+		<a href="#1"><img id="img12"src="images/uparrow1.png" alt="Img" height="60" width="60" ></a>
+		</center>
+	<div id="footnote">
+			<div class="clearfix">
+				<div class="connect">
+				<a href="https://www.facebook.com/pages/Agricultural-Life/1411377029126080?skip_nax_wizard=true" class="facebook"></a><a href="https://twitter.com/AgriculturalLif" class="twitter"></a>				
+				</div>				
+				<center>
+				<p style="color:white">
+				
+					© Copyright 2014 <i> Agricultural Life </i>. All Rights Reserved. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="faq.html">FAQ</a> &nbsp |&nbsp <a href="aboutal.html"> About AL </a> &nbsp | &nbsp  <a href="termsofuse.html">Terms of Use </a> &nbsp |&nbsp  <a href="marketingrules.html"> Marketing Rules </a> &nbsp| &nbsp <a href="marketingtips.html"> Marketing Tips </a> &nbsp| &nbsp <a href="contactal.html"> Contact AL <a>
+				
+				</p>
+				</center>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
